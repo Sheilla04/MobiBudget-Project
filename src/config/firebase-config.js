@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  apiKey: "AIzaSyCjxalt5khjbxqOvHm1iMbYPpZql1YAjZg",
+  authDomain: "mobiapp-11caf.firebaseapp.com",
+  projectId: "mobiapp-11caf",
+  storageBucket: "mobiapp-11caf.appspot.com",
+  messagingSenderId: "273706744720",
+  appId: "1:273706744720:web:cbdff2cc99a32124365115"
 };
 
 
