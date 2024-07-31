@@ -1,0 +1,739 @@
+/* Import the "Poppins" font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container{
+    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto; /* centers the container */
+}
+
+
+/* Centered container for the navbar */
+.navbar-container {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* Style the navigation bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #031932;
+    padding: 14px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeInDown 1s ease-in-out;
+    
+}
+
+/* Keyframes for navbar animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style the logo */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 80px; /* Adjust the height as needed */
+    margin-right: 20px; /* Increase the space between the image and the text */
+}
+
+.navbar .logo .brand-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Moves nav bar links to the right */
+.nav-links-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center; /* Center the items */
+}
+
+/* Style the links inside the navbar */
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .logo a:hover {
+    background-color: #031932;
+    transform: scale(1.0);
+    
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #5d5e5f;
+    color: rgb(248, 245, 245);
+    border-radius: 10px;
+    transform: scale(1.1);
+}
+
+/* Add some padding to the top of the body to prevent content from being hidden behind the navbar */
+body {
+    padding-top: 60px;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.type--A{
+    --line_color : #555555 ;
+    --back_color : #FFECF6  ;
+  }
+  
+  .button{
+      position : relative ;
+      z-index : 0 ;
+      width : 240px ;
+      height : 56px ;
+      text-decoration : none ;
+      font-size : 14px ; 
+      font-weight : bold ;
+      color : var(--line_color) ;
+      letter-spacing : 2px ;
+      transition : all .3s ease ;
+  }
+  .button__text{
+      display : flex ;
+      justify-content : center ;
+      align-items : center ;
+      width : 100% ;
+      height : 100% ;
+  }
+  .button::before,
+  .button::after,
+  .button__text::before,
+  .button__text::after{
+      content : '' ;
+      position : absolute ;
+      height : 3px ;
+      border-radius : 2px ;
+      background : var(--line_color) ;
+      transition : all .5s ease ;
+  }
+  .button::before{
+      top : 0 ;
+      left : 54px ;
+      width : calc( 100% - 56px * 2 - 16px ) ;
+  }
+  .button::after{
+      top : 0 ;
+      right : 54px ;
+      width : 8px ;
+  }
+  .button__text::before{
+      bottom : 0 ;
+      right : 54px ;
+      width : calc( 100% - 56px * 2 - 16px ) ;
+  }
+  .button__text::after{
+      bottom : 0 ;
+      left : 54px ;
+      width : 8px ;
+  }
+  .button__line{
+      position : absolute ;
+      top : 0 ;
+      width : 56px ;
+      height : 100% ;
+      overflow : hidden ;
+  }
+  .button__line::before{
+      content : '' ;
+      position : absolute ;
+      top : 0 ;
+      width : 150% ;
+      height : 100% ;
+      box-sizing : border-box ;
+      border-radius : 300px ;
+      border : solid 3px var(--line_color) ;
+  }
+  .button__line:nth-child(1),
+  .button__line:nth-child(1)::before{
+      left : 0 ;
+  }
+  .button__line:nth-child(2),
+  .button__line:nth-child(2)::before{
+      right : 0 ;
+  }
+  .button:hover{
+      letter-spacing : 6px ;
+  }
+  .button:hover::before,
+  .button:hover .button__text::before{
+      width : 8px ;
+  }
+  .button:hover::after,
+  .button:hover .button__text::after{
+      width : calc( 100% - 56px * 2 - 16px ) ;
+  }
+  .button__drow1,
+  .button__drow2{
+      position : absolute ;
+      z-index : -1 ;
+      border-radius : 16px ;
+      transform-origin : 16px 16px ;
+  }
+  .button__drow1{
+      top : -16px ;
+      left : 40px ;
+      width : 32px ;
+      height : 0;
+      transform : rotate( 30deg ) ;
+  }
+  .button__drow2{
+      top : 44px ;
+      left : 77px ;
+      width : 32px ;
+      height : 0 ;
+      transform : rotate(-127deg ) ;
+  }
+  .button__drow1::before,
+  .button__drow1::after,
+  .button__drow2::before,
+  .button__drow2::after{
+      content : '' ;
+      position : absolute ;
+  }
+  .button__drow1::before{
+      bottom : 0 ;
+      left : 0 ;
+      width : 0 ;
+      height : 32px ;
+      border-radius : 16px ;
+      transform-origin : 16px 16px ;
+      transform : rotate( -60deg ) ;
+  }
+  .button__drow1::after{
+      top : -10px ;
+      left : 45px ;
+      width : 0 ;
+      height : 32px ;
+      border-radius : 16px ;
+      transform-origin : 16px 16px ;
+      transform : rotate( 69deg ) ;
+  }
+  .button__drow2::before{
+      bottom : 0 ;
+      left : 0 ;
+      width : 0 ;
+      height : 32px ;
+      border-radius : 16px ;
+      transform-origin : 16px 16px ;
+      transform : rotate( -146deg ) ;
+  }
+  .button__drow2::after{
+      bottom : 26px ;
+      left : -40px ;
+      width : 0 ;
+      height : 32px ;
+      border-radius : 16px ;
+      transform-origin : 16px 16px ;
+      transform : rotate( -262deg ) ;
+  }
+  .button__drow1,
+  .button__drow1::before,
+  .button__drow1::after,
+  .button__drow2,
+  .button__drow2::before,
+  .button__drow2::after{
+      background : var( --back_color ) ;
+  }
+  .button:hover .button__drow1{
+      animation : drow1 ease-in .06s ;
+      animation-fill-mode : forwards ;
+  }
+  .button:hover .button__drow1::before{
+      animation : drow2 linear .08s .06s ;
+      animation-fill-mode : forwards ;
+  }
+  .button:hover .button__drow1::after{
+      animation : drow3 linear .03s .14s ;
+      animation-fill-mode : forwards ;
+  }
+  .button:hover .button__drow2{
+      animation : drow4 linear .06s .2s ;
+      animation-fill-mode : forwards ;
+  }
+  .button:hover .button__drow2::before{
+      animation : drow3 linear .03s .26s ;
+      animation-fill-mode : forwards ;
+  }
+  .button:hover .button__drow2::after{
+      animation : drow5 linear .06s .32s ;
+      animation-fill-mode : forwards ;
+  }
+  @keyframes drow1{
+      0%   { height : 0 ; }
+      100% { height : 100px ; }
+  }
+  @keyframes drow2{
+      0%   { width : 0 ; opacity : 0 ;}
+      10%  { opacity : 0 ;}
+      11%  { opacity : 1 ;}
+      100% { width : 120px ; }
+  }
+  @keyframes drow3{
+      0%   { width : 0 ; }
+      100% { width : 80px ; }
+  }
+  @keyframes drow4{
+      0%   { height : 0 ; }
+      100% { height : 120px ; }
+  }
+  @keyframes drow5{
+      0%   { width : 0 ; }
+      100% { width : 124px ; }
+  }
+  
+  
+  
+  
+  
+  
+  /* 本体には関係ないスタイル */
+  .button-container{
+      width : 100% ;
+      height : 300px ;
+      display : flex ;
+      flex-direction : column ;
+      justify-content : center ;
+      align-items : center ;
+  }
+  .button:not(:last-child){
+    margin-bottom : 64px ;
+  }
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Style the sections */
+section {
+    padding: 60px 20px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+/* Keyframes for fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style the section headers */
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Style the hero section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('overhead-view-of-an-office-meeting.jpg');
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    position: absolute;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    animation: slideInLeft 1.5s ease-in-out;
+}
+
+/* Keyframes for slide-in-left animation */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    animation: slideInRight 1.5s ease-in-out;
+}
+
+/* Keyframes for slide-in-right animation */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Style the card */
+.card {
+
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    
+    flex: 1 1 calc(33.333% - 40px); /* Each card takes up roughly a third of the container's width, minus the gap */
+    box-sizing: border-box; /* Includes padding and border in the width calculation */
+    border: 0px solid #ccc; /* Optional: Add border to the card */
+    border-radius: 10px; /* Optional: Rounded corners for the card */
+    overflow: hidden; /* Ensures content doesn't overflow the card's boundaries */
+    background-color: #fff; /* Background color for the card */
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Each card will be at least 300px wide, and will adjust to fit the container */
+    gap: 20px; /* Adds space between the cards */
+    justify-items: center; /* Center the cards horizontally */
+    flex-wrap: wrap; /* Allows cards to wrap onto the next line if necessary */
+}
+
+.card-icon {
+    font-size: 4rem; /* Adjust the size of the icon */
+    color: #71e4f9; /* Color of the icon */
+    margin-bottom: 10px; /* Space between the icon and the text */
+    align-items: center;
+}
+
+.card-service{
+    border: 10px #71e4f9;
+    border-bottom-color: #71e4f9;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    flex: auto; /* Take up remaining space */
+    padding-left: 20px; /* Add some space between image and text */
+}
+
+.card-image {
+    width: 80%; /* Adjust image width as needed */
+    height: 300px;
+    border-radius: 10px; /* Optional: Apply border radius to image */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.card-image2 {
+    width: 50%; /* Adjust image width as needed */
+    height: 300px;
+    border-radius: 10px; /* Optional: Apply border radius to image */
+    padding-right: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-image2:hover {
+    transform: scale(1.05);
+}
+
+/* Specific styles for the card with image on the right */
+.card-image-right {
+    order: 2; /* Ensure image is on the right */
+    margin-left: 20px; /* Add space between image and text */
+    border-radius: 10px;
+    height: 300px;
+    width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-image-right:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.card p {
+    font-size: 1.1rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Style the team section */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the team members */
+}
+
+.team-member {
+    background-color: #31acd12f;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    animation: fadeInUp 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+}
+
+.team-member p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.team-member a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.team-member a:hover {
+    color: #71e4f9;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    color: #333;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Responsive Design */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 2px;
+    width: 25px;
+    background-color: white;
+    margin: 2px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#errorMessage {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Responsive for mobile screens */
+@media screen and (max-width: 768px) {
+    .container{
+        width: 100vw;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+        position:absolute;
+        top: 98px; /* Adjust if your navbar height changes */
+        right: 0;
+        background-color: #031932;
+        width: 100%;
+        z-index: 999;
+        padding: 20px 0;
+        flex-basis: auto;
+        flex-direction: column;
+    }
+    .navbar-container.active {
+        height: auto; /* Height expands to fit content */
+    }
+    
+    .nav-links a {
+        padding: 14px 0;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: flex;
+        padding-right: 20px;
+    }
+
+    .hero-section {
+        background-size: cover;
+        padding: 0;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px; /* Reduce margin between cards */
+    }
+
+    .card-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .card-image,
+    .card-image2,
+    .card-image-right {
+        width: 100%;
+        height: auto;
+    }
+
+    .team-container {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .team-member {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px 0;
+    }
+}
+
